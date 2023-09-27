@@ -42,6 +42,10 @@ class Person(models.Model):
         help_text=_("format: required, max:100")
     )
 
+
+    def __str__(self):
+        return f"{self.name} {self.surname} {self.last_name}"
+
 class OwnerCarPark(Person):
     class Meta:
         verbose_name = _("Car Park Owner")
@@ -70,13 +74,14 @@ class CarPark(models.Model):
         help_text=_("format: required, default-0"),
     )
 
+    def __str__(self):
+        return f"{self.park_name} - {self.total_cars}"
+
 
 class CarDriver(Person):
     class Meta:
         verbose_name = _("Car Driver")
         verbose_name_plural = _("Car Driver")
-
-    car = models.OneToOneField("Car", on_delete=models.PROTECT, related_name="car")
 
 
 class Car(models.Model):
@@ -92,8 +97,12 @@ class Car(models.Model):
         verbose_name=_("License Number"),
         help_text=_("format: required, max:50")
     )
+    driver = models.OneToOneField("CarDriver", on_delete=models.PROTECT, related_name="driver")
     park = models.ForeignKey("CarPark", on_delete=models.CASCADE, related_name="park")
     route = models.OneToOneField("CarRoute", on_delete=models.CASCADE, related_name="route")
+
+    def __str__(self):
+        return f"{self.plate_number}"
 
 class CarRoute(models.Model):
     class Meta:
@@ -106,5 +115,8 @@ class CarRoute(models.Model):
         verbose_name=_("Route"),
         help_text=_("format: required")
     )
+
+    def __str__(self):
+        return self.path
 
 
