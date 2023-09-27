@@ -12,33 +12,54 @@ There are five tables `OwnerCarPark`, `CarPark`, `CarDriver`, `Car` and
 
 First clone the repository
 
-- $ git clone https://github.com/AnerGcorp/scalaxi-carpark.git
-- $ cd scalaxi-carpark
--
-- If you on mac or linux run the following command
-- $ virtualenv env
-- $ source env/bin/activate
-- $ pip install -r requirements.txt
-- $ python3 manage.py makemigrations
-- $ python3 manage.py migrate
-- For creating super user
-- $ python3 manage.py createsuperuser
-  Fill the blanks
-- $ python3 manage.py runserver
+```
+$ git clone https://github.com/AnerGcorp/scalaxi-carpark.git
+$ cd scalaxi-carpark
+```
 
-If you on windows run the following command
+If you on mac or linux run the following command
 
-- $ py -m virtualenv env
-- $ \\env\\bin\\activate
-- $ pip install -r requirements.txt
-- $ py manage.py makemigrations
-- $ py manage.py migrate
+```
+$ virtualenv env
+$ source env/bin/activate
+$ pip install -r requirements.txt
+$ python3 manage.py makemigrations
+$ python3 manage.py migrate
+```
 
 For creating super user
 
-- $ py manage.py createsuperuser
-  Fill the blanks
-- $ py manage.py runserver
+```
+$ python3 manage.py createsuperuser
+```
+
+Fill the blanks
+
+```
+$ python3 manage.py runserver
+```
+
+If you on windows run the following command
+
+```
+$ py -m virtualenv env
+$ \\env\\bin\\activate
+$ pip install -r requirements.txt
+$ py manage.py makemigrations
+$ py manage.py migrate
+```
+
+For creating super user
+
+```
+$ py manage.py createsuperuser
+```
+
+Fill the blanks
+
+```
+$ py manage.py runserver
+```
 
 Project runs on default port 8000, open the browser and head to `http://localhost:8000/admin``, enter the admin user and password there you can manage car park.
 
