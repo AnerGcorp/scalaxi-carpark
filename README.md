@@ -1,23 +1,23 @@
-## Car Park Database Design
+## Проектирование базы данных автостоянок
 
-There are five tables `OwnerCarPark`, `CarPark`, `CarDriver`, `Car` and
-`CarRoute`. Let's define the relationships of models(tables)
+Имеется пять таблиц «OwnerCarPark», «CarPark», «CarDriver», «Car» и «CarDriver».
+«Автомобильный маршрут». Определим связи моделей(таблиц)
 
-- `OwnerCarPark` and `CarPark`, there are two different scenarios, `OwnerCarPark` can have many `CarPark`s or one `CarPark` => so there will be one-to-many relationship
-- `CarPark` and `Car`, a `CarPark` can have many `Car`s, so there are also one-to-many relationship
-- `CarDriver` and `Car`, a `Car` has only one `CarDriver`, so there will be one-to-one relationship
-- `Car` and `CarRoute`, a `Car` has only one `CarRoute` (in some cases there will be multiple route, if that is the case then there will be one-to-many relationship.) so there will one-to-one relationship
+- `OwnerCarPark` и `CarPark`, существует два разных сценария: `OwnerCarPark` может иметь множество `CarPark` или один `CarPark` =>, поэтому будет связь «один ко многим».
+- `CarPark` и `Car`, `CarPark` может иметь много `Car`, поэтому существует также связь один-ко-многим.
+- `CarDriver` и `Car`, у `Car` есть только один `CarDriver`, поэтому связь будет один к одному.
+- `Car` и `CarRoute`, `Car` имеет только один `CarRoute` (в некоторых случаях будет несколько маршрутов, в этом случае будет связь один-ко-многим). поэтому будет один отношение -к-одному
 
-### To run the project
+### Чтобы запустить проект
 
-First clone the repository
+Сначала клонируйте репозиторий
 
 ```
 $ git clone https://github.com/AnerGcorp/scalaxi-carpark.git
 $ cd scalaxi-carpark
 ```
 
-If you on mac or linux run the following command
+Если вы используете Mac или Linux, выполните следующую команду
 
 ```
 $ virtualenv env
@@ -27,19 +27,19 @@ $ python3 manage.py makemigrations
 $ python3 manage.py migrate
 ```
 
-For creating super user
+Для создания суперпользователя
 
 ```
 $ python3 manage.py createsuperuser
 ```
 
-Fill the blanks
+Заполнить бланки
 
 ```
 $ python3 manage.py runserver
 ```
 
-If you on windows run the following command
+Если вы в Windows выполните следующую команду
 
 ```
 $ py -m virtualenv env
@@ -49,18 +49,18 @@ $ py manage.py makemigrations
 $ py manage.py migrate
 ```
 
-For creating super user
+Для создания суперпользователя
 
 ```
 $ py manage.py createsuperuser
 ```
 
-Fill the blanks
+Заполнить бланки
 
 ```
 $ py manage.py runserver
 ```
 
-Project runs on default port 8000, open the browser and head to `http://localhost:8000/admin``, enter the admin user and password there you can manage car park.
+Проект запускается на порту 8000 по умолчанию, откройте браузер и перейдите по адресу `http://localhost:8000/admin`, введите пользователя и пароль администратора, там вы сможете управлять парковкой.
 
-As you will see when the cars added or deleted to the car park the total number of cars are changed.
+Как вы увидите, когда автомобили добавляются или удаляются из автостоянки, общее количество автомобилей изменяется.
